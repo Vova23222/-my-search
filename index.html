@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мій Пошук</title>
+  <style>
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 50px;
+      color: #4285f4;
+      margin-bottom: 40px;
+    }
+    input[type="text"] {
+      width: 400px;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: #4285f4;
+      color: white;
+      cursor: pointer;
+    }
+    .results {
+      margin-top: 40px;
+      width: 600px;
+      text-align: left;
+    }
+    .result-item {
+      margin-bottom: 20px;
+    }
+    .ad {
+      margin-top: 30px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px dashed #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Мій Пошук</h1>
+  <input type="text" id="search" placeholder="Введи запит...">
+  <button onclick="search()">Шукати</button>
+  <div class="results" id="results"></div>
+  <div class="ad">
+    <strong>Реклама:</strong> Тут буде твоя Google-реклама або партнерське посилання.
+  </div>
+  <script>
+    function search() {
+      const query = document.getElementById('search').value;
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `
+        <div class="result-item">
+          <strong>Результат для:</strong> "${query}"<br>
+          <a href="#">https://example.com/${query}</a>
+          <p>Це демонстраційний результат пошуку. Згодом тут будуть реальні посилання або партнерські товари.</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
+
